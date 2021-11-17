@@ -7,7 +7,7 @@ Wrap a Web Component (Custom Element) into a React Component, in order to pass a
 ### Install
 
 ```
-$ npm install manuel-di-iorio/react-wrap-webcomponent
+$ npm install react-wrap-webcomponent
 ```
 
 ---
@@ -52,6 +52,7 @@ class MyComponent extends HTMLElement {
 ---
 
 Custom functions in the props can be triggered via the event dispatch API
+
 https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events
 
 Example: 
