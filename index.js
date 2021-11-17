@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 /**
  * Wrap a Web Component into a React Component
  * @author Manuel Di Iorio
- * @version 1.0.0
+ * @version 1.0.1
  * 
  * @param {String} webComponentId Custom element ID
  * @param {Object} settings Settings
@@ -30,7 +30,7 @@ export const wrapWebComponent = (webComponentId, settings = {}) => {
 
     // Get the updated data and events from the props
     const getUpdatedProps = (useCache = false) => {
-      if (node) node.data = {};
+      if (node && !node.data) node.data = {};
 
       for (const key in props) {
         const propValue = props[key];

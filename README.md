@@ -33,7 +33,7 @@ function App() {
 
 ### Docs
 
-Objects and arrays to the custom element will be available on the custom element 'data' property.
+Objects and arrays to pass to the web component will be available on the element 'data' property.
 
 Example:
 
@@ -51,13 +51,21 @@ class MyComponent extends HTMLElement {
 
 ---
 
-Custom functions in the props can be triggered via the standard event dispatch API
+Custom functions in the props can be triggered via the event dispatch API
+https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events
 
 Example: 
 
 ```js
-const event = new Event("mycustomevent") // Only lowercase events
-this.dispatchEvent(event)
+// Only trigger the event
+this.dispatchEvent(new Event("mycustomevent"))
+
+// Or trigger with custom data
+this.dispatchEvent(new CustomEvent('mycustomevent', { customdata: "yes" });
+
+function eventHandler(e) {
+  console.log('Has custom data: ' + e.customdata);
+}
 ```
 
 ---

@@ -9,12 +9,12 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/manuel-di-iorio/react-wrap-webcomponent/issues"
   },
   "homepage": "https://github.com/manuel-di-iorio/react-wrap-webcomponent#readme",
-  "dependencies": {
+  "optionalDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
