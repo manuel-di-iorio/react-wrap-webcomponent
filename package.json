@@ -1,0 +1,21 @@
+{
+  "name": "react-wrap-webcomponent",
+  "version": "1.0.0",
+  "description": "Wrap a Web Component (Custom Element) into a React Component, in order to pass attributes, custom events and arbitrary complex data, like objects or arrays, when using props",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuel-di-iorio/react-wrap-webcomponent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuel-di-iorio/react-wrap-webcomponent/issues"
+  },
+  "homepage": "https://github.com/manuel-di-iorio/react-wrap-webcomponent#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
