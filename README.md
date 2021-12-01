@@ -25,7 +25,7 @@ const MyComponentWrapped = wrapWebComponent("my-component");
 
 function App() {
   return (
-    <MyComponentWrapped myobject={{ hello: "world" }} trackmyobj="true" mycustomevent={() => console.log("trigger")} />
+    <MyComponentWrapped myobject={{ hello: "world" }} mycustomevent={() => console.log("trigger")} />
   );
 }
 ```
@@ -40,10 +40,10 @@ Example:
 ```js
 class MyComponent extends HTMLElement {
   static get observedAttributes() {
-    return ["trackmyobj"];
+    return ["_myobject"]; // An attribute with a prefix is automatically set in order to track the changes (by default)
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
+  attributeChangedCallback(name) {
     console.log(this.data) // Prints -> `{ hello: "world" }
   }
 }
