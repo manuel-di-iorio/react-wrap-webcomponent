@@ -1,6 +1,6 @@
 {
   "name": "react-wrap-webcomponent",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Wrap a Web Component (Custom Element) into a React Component, in order to pass attributes, custom events and arbitrary complex data, like objects or arrays, when using props",
   "main": "index.js",
   "repository": {

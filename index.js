@@ -4,16 +4,19 @@ import ReactDOM from 'react-dom';
 /**
  * Wrap a Web Component into a React Component
  * @author Manuel Di Iorio
- * @version 1.0.1
  * 
  * @param {String} webComponentId Custom element ID
  * @param {Object} settings Settings
  * @param {Boolean} [settings.layoutEffect=false] If to use a layout effect hook (useful to avoid UI flickering but it runs synchronously)
+ * @param {Boolean} [settings.autoSetAttrForComplexData=true] If to automatically set a special attribute, when passing objects/arrays (useful to track these changes)
+ * @param {String} [settings.autoSetAttrPrefix="_"] The prefix used in the special attribute name (cannot be empty)
  *
  * @return {Function} React Component
  */
 export const wrapWebComponent = (webComponentId, settings = {}) => {
   const useEffectHook = settings.layoutEffect ? useLayoutEffect : useEffect;
+  const autoSetAttrForComplexData = settings.autoSetAttrForComplexData !== false;
+  const autoSetAttrPrefix = settings.autoSetAttrPrefix || "_";
 
   // Return a React wrapper component
   return (props) => {
@@ -54,7 +57,14 @@ export const wrapWebComponent = (webComponentId, settings = {}) => {
           case "array":
           case "object":
             // Store arbitrary data into the node for later retrieval
-            if (node) node.data[key] = propValue;
+            if (node) {
+              node.data[key] = propValue;
+
+              if (autoSetAttrForComplexData) {
+                const specialKey = autoSetAttrPrefix + key;
+                node.setAttribute(specialKey, !node.getAttribute(specialKey));
+              }
+            }
             break;
 
           default:
