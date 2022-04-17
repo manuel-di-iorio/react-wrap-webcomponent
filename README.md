@@ -1,3 +1,4 @@
+# Notice: Unmaintained repository but mostly important, not ready for a production usage
 # React Wrap Web Component
 
 Wrap a Web Component (Custom Element) into a React Component, in order to pass attributes, custom events and arbitrary complex data, like objects or arrays, when using props.
